@@ -4,19 +4,14 @@
 
     <window name ="watchrecordings">
 
-        <imagetype name="fanart">
-            <area>0,0,100%,100%</area>
-            <filename />
-        </imagetype>
-
         <textarea name="pagetitle" from="basetextarea">
-            <area>20,4,570,40</area>
+            <area>20,24,570,60</area>
             <font>baselarge</font>
             <value>Watch Recordings</value>
         </textarea>
 
         <clock name="clock">
-            <area>850,5,410,30</area>
+            <area>850,25,410,50</area>
             <font>basesmall_normal</font>
             <align>vcenter,right</align>
             <template>%DATE% %TIME%</template>
@@ -36,89 +31,34 @@
 
         <buttonlist name="recgroups">
             <arrange>stack</arrange>
-            <align>top,hcenter</align>
-            <spacing>0</spacing>
-            <scrollstyle>free</scrollstyle>
+            <area>464,30,734,40</area>
+            <align>hcenter</align>
+            <scrollstyle>center</scrollstyle>
             <wrapstyle>items</wrapstyle>
             <layout>horizontal</layout>
-
-            <area>370,35,880,46</area>
-            <buttonarea>25,0,-25,100%</buttonarea>
-
+            <buttonarea>0,0,100%,100%</buttonarea>
             <statetype name="buttonitem">
-                <area>0,0,400,100%</area>
-                <minsize>50,100%</minsize>
-
                 <state name="selectedinactive">
-                    <area>0,5,100%,-5</area>
-                    <minsize>50,100%</minsize>
-                    <group name="areagroup">
-                        <area>0,0,100%,100%</area>
-                        <minsize>50,100%</minsize>
-
-                        <shape name="recGroupShape">
-                            <area>0,0,100%,100%</area>
-                            <minsize>50,100%</minsize>
-                            <type>roundbox</type>
-                            <cornerradius>15</cornerradius>
-                            <line color="#ffffff" alpha="255" width="3" />
-                            <fill style="gradient">
-                                <gradient start="#00aa00" end="#00ff00" alpha="200" direction="vertical" />
-                            </fill>
-                        </shape>
-                        <textarea name="buttontext">
-                            <area>15,5,-15,-5</area>
-                            <minsize>50,100%</minsize>
-                            <extraleading>4</extraleading>
-                            <align>center</align>
-                            <cutdown>yes</cutdown>
-                            <font>basesmall</font>
-                            <alpha>255</alpha>
-                        </textarea>
-                    </group>
+                    <area>0,0,300,100%</area>
+                    <textarea name="buttontext">
+                        <area>10,2,-10,-5</area>
+                        <align>center</align>
+                        <font>basemedium</font>
+                        <alpha>200</alpha>
+                    </textarea>
                 </state>
-
-                <state name="selectedactive" from="selectedinactive" />
-
                 <state name="inactive" from="selectedinactive">
-                    <area>0,0,100%,100%</area>
-                    <group name="areagroup">
-                        <area>0,5,100%,-5</area>
-                        <minsize>50,100%</minsize>
-                        <shape name="recGroupShape">
-                            <area>0,0,100%,100%</area>
-                            <minsize>50,100%</minsize>
-                            <type>roundbox</type>
-                            <fill color="#00aa00" alpha="120" />
-                            <line color="#cccccc" width="3" alpha="100" />
-                            <cornerradius>15</cornerradius>
-                        </shape>
-                    </group>
+                    <textarea name="buttontext">
+                        <area>0,0,0,0</area>
+                    </textarea>
                 </state>
-
-                <state name="active" from="inactive" />
-
             </statetype>
-
             <statetype name="upscrollarrow">
-                <position>0,50%-16</position>
-                <showempty>yes</showempty>
-                <state type="full">
-                    <imagetype name="lefton">
-                        <filename>ui/left_arrow-sel.png</filename>
-                    </imagetype>
-                </state>
+                <area>0,0,0,0</area>
             </statetype>
             <statetype name="downscrollarrow">
-                <position>100%-32,50%-16</position>
-                <showempty>yes</showempty>
-                <state type="full">
-                    <imagetype name="righton">
-                        <filename>ui/right_arrow-sel.png</filename>
-                    </imagetype>
-                </state>
+                <area>0,0,0,0</area>
             </statetype>
-
         </buttonlist>
 
         <buttonlist name="groups" from="basebuttonlist2">
@@ -407,14 +347,8 @@
             <template>%"|SUBTITLE|" %%(|STARS|) %%DESCRIPTION%</template>
         </textarea>
 
-        <imagetype name="preview" depends="!coverart">
+        <imagetype name="preview">
             <area>920,410,320,240</area>
-            <preserveaspect>true</preserveaspect>
-        </imagetype>
-
-        <imagetype name="coverart" >
-            <area>920,410,320,240</area>
-            <filename />
             <preserveaspect>true</preserveaspect>
         </imagetype>
 
@@ -427,25 +361,6 @@
             <align>allcenter</align>
         </textarea>
 
-        <progressbar name="usedbar">
-            <area>20,45,330,28</area>
-            <layout>horizontal</layout>
-            <style>reveal</style>
-            <imagetype name="background">
-                <area>0,0,100%,28</area>
-                <filename>progressbar_background.png</filename>
-            </imagetype>
-            <imagetype name="progressimage">
-                <area>0,0,100%,28</area>
-                <filename>progressbar_fill2.png</filename>
-            </imagetype>
-        </progressbar>
-
-        <textarea name="freereport">
-            <area>20,45,330,28</area>
-            <align>center</align>
-            <font>basesmaller</font>
-        </textarea>
     </window>
 
     <window name="groupselector">
